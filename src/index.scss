@@ -1,0 +1,65 @@
+// GLOBAL STYLES
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+// RESET
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+// ACESSIBILIDADE FONTE.
+@media (max-width: 1080px) {
+    html {
+        font-size: 93, 75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87, 5%;
+    }
+}
+
+// VARIABLES;
+:root {
+    --purple__light: #835AFD;
+    --purple__dark: #6F4BD8;
+
+    --pink__light: #D67EE2;
+    --pink__dark: #E559F9;
+
+    --red__light: #E73F5D;
+    --red__dark: #D73754;
+
+    --white__light: #FEFEFE;
+    --white__dark: #F8F8F8;
+
+    --gray__light: #DBDCDD;
+    --gray__medium: #A8A8B3;
+    --gray__dark: #737380;
+
+    --black__light: #29292E;
+    --black__dark: #050206;
+
+    --font__roboto: 'Roboto', sans-serif;
+    --font__poppins: 'Poppins', sans-serif;
+}
+
+// ELEMENTS
+
+body {
+    background-color: var(--white__dark);
+    color: var(--black__light);
+}
+
+body, input, button, textarea {
+    font-family: var(--font__roboto);
+    font-weight: 400;
+    font-size: 1rem;
+}
