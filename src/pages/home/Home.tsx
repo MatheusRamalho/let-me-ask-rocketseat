@@ -1,37 +1,34 @@
 
-import illustrationImg from '../../assets/images/illustration.svg';
+// import { Auth } from '../../components/AuthPage';
+// import { Aside } from '../../components/Aside';
+import { Button } from '../../components/Button';
+
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
 
+import { HomeMain } from './styled';
+
 export function Home() {
     return (
-        <div>
-            <aside>
-                <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
-                <strong> Crie sala de &amp;A ao-vivo </strong>
-                <p> Tire as dúvidas da sua audiência em tempo-real</p>
-            </aside>
+        <HomeMain>
+            <div className="main__content">
+                <img src={logoImg} alt="" />
 
-            <main>
-                <div>
-                    <img src={logoImg} alt="" />
+                <Button className="btn__create__room">
+                    <img src={googleIconImg} alt="" />
+                    Crie sua sala com o Google
+                </Button>
 
-                    <button>
-                        <img src={googleIconImg} alt="" />
-                        Crie sua sala com o Google
-                    </button>
+                <div className="main__separator"> Ou entre em uma sala </div>
 
-                    <div> Ou entre em uma sala </div>
-
-                    <form>
-                        <fieldset>
-                            <legend></legend>
-                            <input type="text" placeholder="Informe o código da sala" />
-                            <button type="submit"> Entrar na sala </button>
-                        </fieldset>
-                    </form>
-                </div>
-            </main>
-        </div>
+                <form>
+                    <fieldset>
+                        <legend hidden> Código da sala </legend>
+                        <input type="text" placeholder="Informe o código da sala" />
+                        <Button type="submit"> Entrar na sala </Button>
+                    </fieldset>
+                </form>
+            </div>
+        </HomeMain>
     );
 }

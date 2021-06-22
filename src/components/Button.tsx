@@ -1,18 +1,43 @@
-import { useState } from "react";
+// Tem todas as propriedades que um button html aceita.
+import { ButtonHTMLAttributes } from 'react';
 
-export function Button() {
-    // IMUTABILIDADE
-    // - A partir do momento em que uma variável foi criada no estado de um componente, ela não sofre alteração.
-    const [counter, setCounter] = useState(0)
+import styled from 'styled-components';
 
-    function increments() {
-        setCounter(counter + 1);
-        console.log(counter);
+export const ButtonPri = styled.button`
+    cursor: pointer;
+
+    height: 3.125rem;
+    margin-top: 4rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--purple__light);
+    transition: background-color .2s;
+
+    font-weight: 500;
+    color: var(--white__light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin-right: 0.5rem;
     }
 
+    &:not(:disabled):hover {
+        background-color: var(--purple__dark);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;   
+    }
+`;
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export function Button(props: ButtonProps) {
     return (
-        <button onClick={increments}> 
-            {counter}
-        </button>
+        <ButtonPri {...props} />
     );
 }
