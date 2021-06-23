@@ -1,13 +1,16 @@
 import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/useAuth';
+
+import { AuthPage } from '../../components/AuthPage';
+import { AuthMain } from '../../components/AuthMain';
 import { Aside } from '../../components/Aside';
 import { Button } from '../../components/Button';
 
 import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
 
-import { AuthPage, MainPage } from './styled';
+// import { MainPage } from './styled';
 
 export function Home() {
     const history = useHistory();
@@ -15,7 +18,7 @@ export function Home() {
 
     async function handleCreateRoom() {
         if (!user) {
-           await signInWithGoogle();
+            await signInWithGoogle();
         }
         history.push('rooms/new'); // Redireciona pra tela de criar a sala
     }
@@ -24,7 +27,7 @@ export function Home() {
         <AuthPage>
             <Aside />
 
-            <MainPage>
+            <AuthMain>
                 <div className="main__content">
                     <img src={logoImg} alt="" />
 
@@ -43,7 +46,7 @@ export function Home() {
                         </fieldset>
                     </form>
                 </div>
-            </MainPage>
+            </AuthMain>
         </AuthPage>
     );
 }

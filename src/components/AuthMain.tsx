@@ -1,12 +1,9 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-export const AuthPage = styled.div`
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    align-items: center;
-`;
+type AuthMainProps = {
+    children: ReactNode;
+}
 
 export const MainPage = styled.main`
     flex: 9;
@@ -109,3 +106,11 @@ export const MainPage = styled.main`
         }
     }  
 `;
+
+export function AuthMain(props: AuthMainProps) {
+    return (
+        <MainPage>
+            {props.children}
+        </MainPage>
+    )
+}
