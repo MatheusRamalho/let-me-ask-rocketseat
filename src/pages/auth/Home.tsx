@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { firebase, auth } from '../../services/firebase';
-
+import { useAuth } from '../../hooks/useAuth';
 import { Aside } from '../../components/Aside';
 import { Button } from '../../components/Button';
 
@@ -12,17 +11,13 @@ import { AuthPage, MainPage } from './styled';
 
 export function Home() {
     const history = useHistory();
+    const { user, signInWithGoogle } = useAuth();
 
-    function handleCreateRoom() {
-        const provider = new firebase.auth.GoogleAuthProvider();
-
-        // Faz login com a conta do google
-        auth.signInWithPopup(provider).then(result => {
-            console.log(result);
-
-            // Redireciona pra tela de criar a sala
-            history.push('rooms/new');
-        });
+    async function handleCreateRoom() {
+        if (!user) {
+           await signInWithGoogle();
+        }
+        history.push('rooms/new'); // Redireciona pra tela de criar a sala
     }
 
     return (
