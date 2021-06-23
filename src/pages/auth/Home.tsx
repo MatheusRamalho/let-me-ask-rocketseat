@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
+import { firebase, auth } from '../../services/firebase';
+
 import { Aside } from '../../components/Aside';
 import { Button } from '../../components/Button';
 
@@ -11,8 +13,16 @@ import { AuthPage, MainPage } from './styled';
 export function Home() {
     const history = useHistory();
 
-    function navigateToNewRoom() {
-        history.push('rooms/new');
+    function handleCreateRoom() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        // Faz login com a conta do google
+        auth.signInWithPopup(provider).then(result => {
+            console.log(result);
+
+            // Redireciona pra tela de criar a sala
+            history.push('rooms/new');
+        });
     }
 
     return (
@@ -23,7 +33,7 @@ export function Home() {
                 <div className="main__content">
                     <img src={logoImg} alt="" />
 
-                    <Button className="button__sec" onClick={navigateToNewRoom}>
+                    <Button className="button__sec" onClick={handleCreateRoom}>
                         <img src={googleIconImg} alt="" />
                         Crie sua sala com o Google
                     </Button>

@@ -21,8 +21,8 @@ export function NewRoom() {
                     <form>
                         <fieldset>
                             <legend hidden> Código da sala </legend>
-                            <input type="text" placeholder="Informe o código da sala" />
-                            <Button type="submit"> Entrar na sala </Button>
+                            <input type="text" placeholder="Nome da sala" />
+                            <Button type="submit"> Criar sala </Button>
                         </fieldset>
                     </form>
 

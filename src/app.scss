@@ -58,8 +58,17 @@ body {
     color: var(--black__light);
 }
 
-body, input, button, textarea {
+body,
+input,
+button,
+textarea {
     font-family: var(--font__roboto);
     font-weight: 400;
     font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 0.85rem;
+    color: var(--gray__medium);
 }
