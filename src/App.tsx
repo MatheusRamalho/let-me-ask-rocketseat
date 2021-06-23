@@ -1,13 +1,14 @@
-import { Auth } from './components/AuthPage';
-import { Aside } from './components/Aside';
-import { Home } from './pages/home/Home';
+import { Home } from './pages/auth/Home';
+import { NewRoom } from './pages/auth/NewRoom';
+
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
 	return (
-		<Auth>
-			<Aside />
-			<Home />
-		</Auth>
+		<BrowserRouter>
+			<Route path="/" exact={true} component={Home} />
+			<Route path="/rooms/new" component={NewRoom} />
+		</BrowserRouter>
 	)
 }
 

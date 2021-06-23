@@ -32,6 +32,14 @@ export const ButtonPri = styled.button`
         opacity: 0.6;
         cursor: not-allowed;   
     }
+
+    &.button__sec {
+        background-color: var(--pink__light);
+            
+        &:not(:disabled):hover {
+            background-color: var(--pink__dark);
+        }
+    }
 `;
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;

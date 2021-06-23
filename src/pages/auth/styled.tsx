@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-export const HomeMain = styled.main`
+export const AuthPage = styled.div`
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+`;
+
+export const MainPage = styled.main`
     flex: 9;
 
     height: inherit;
@@ -59,6 +67,13 @@ export const HomeMain = styled.main`
             }
         }
 
+        h2 {
+            margin: 4rem 0 1.5rem;
+
+            font-family: var(--font__poppins);
+            font-size: 1.5rem;
+        }
+
         form {
             fieldset {
                 padding: 0;
@@ -79,6 +94,17 @@ export const HomeMain = styled.main`
                 button {
                     margin-top: 1rem;
                 }
+            }
+        }
+
+        p {
+            margin-top: 1rem;
+
+            font-size: 0.875rem;
+            color: var(--gray__dark);
+
+            a {
+                color: var(--pink__light);
             }
         }
     }  
