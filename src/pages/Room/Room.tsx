@@ -1,14 +1,14 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { database } from '../services/firebase';
-import { useAuth } from '../hooks/useAuth';
+import { database } from '../../services/firebase';
+import { useAuth } from '../../hooks/useAuth';
 
-import { Button } from '../components/Button';
-import { RoomCode } from '../components/RoomCode';
+import { Button } from '../../components/Button';
+import { RoomCode } from '../../components/RoomCode';
 
-import logoImg from '../assets/images/logo.svg';
-import '../styles/room.scss';
+import './room.scss';
+import logoImg from '../../assets/images/logo.svg';
 
 type RoomParams = {
     id: string;
@@ -63,7 +63,7 @@ export function Room() {
             setQuestions(parsedQuestion);
         })
     }, [roomId]);
-    
+
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();
 
@@ -103,7 +103,7 @@ export function Room() {
                 <div className="room__title">
                     <h1> Sala {title} </h1>
 
-                    { questions.length > 0 && <span> {questions.length} pergunta(s) </span> }
+                    {questions.length > 0 && <span> {questions.length} pergunta(s) </span>}
                 </div>
 
                 <form onSubmit={handleSendQuestion}>
@@ -133,7 +133,7 @@ export function Room() {
                     </fieldset>
                 </form>
 
-                { JSON.stringify(questions)}
+                {JSON.stringify(questions)}
             </main>
         </div>
     )

@@ -1,9 +1,4 @@
-// Tem todas as propriedades que um button html aceita.
-import { ButtonHTMLAttributes } from 'react';
-
-import styled from 'styled-components';
-
-export const ButtonPri = styled.button`
+button {
     cursor: pointer;
 
     height: 3.125rem;
@@ -30,22 +25,14 @@ export const ButtonPri = styled.button`
 
     &:disabled {
         opacity: 0.6;
-        cursor: not-allowed;   
+        cursor: not-allowed;
     }
 
     &.button__sec {
         background-color: var(--pink__light);
-            
+
         &:not(:disabled):hover {
             background-color: var(--pink__dark);
         }
     }
-`;
-
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
-
-export function Button(props: ButtonProps) {
-    return (
-        <ButtonPri {...props} />
-    );
 }

@@ -1,8 +1,4 @@
-
-import styled from 'styled-components';
-import illustrationImg from '../assets/images/illustration.svg';
-
-export const AsideWrapper = styled.aside`
+.aside__ {
     flex: 6;
 
     height: inherit;
@@ -35,14 +31,4 @@ export const AsideWrapper = styled.aside`
 
         margin-top: 1rem;
     }
-`;
-
-export function Aside() {
-    return (
-        <AsideWrapper>
-            <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
-            <strong> Crie sala de Q&amp;A ao-vivo </strong>
-            <p> Tire as dúvidas da sua audiência em tempo-real </p>
-        </AsideWrapper>
-    );
 }
