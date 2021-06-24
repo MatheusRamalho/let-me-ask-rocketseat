@@ -1,0 +1,33 @@
+.room__code {
+    cursor: pointer;
+
+    height: 2.5rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 0.063rem solid var(--purple__dark);
+    background-color: var(--white__light);
+
+    display: flex;
+
+    div {
+        height: inherit;
+        padding: 0 0.75rem;
+        background-color: var(--purple__dark);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span {
+        flex: 1;
+        display: block;
+        align-self: center;
+
+        width: fit-content;
+        padding: 0 1rem 0 0.75rem;
+
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+}

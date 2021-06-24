@@ -29,12 +29,8 @@ export const MainPage = styled.main`
             align-self: center;
         }
 
-        .btn__create__room {
-            background-color: var(--pink__light);
-            
-            &:hover {
-                background-color: var(--pink__dark);
-            }
+        .button__sec {
+            margin-top: 4rem;
         }
 
         .main__separator {
@@ -74,7 +70,7 @@ export const MainPage = styled.main`
         form {
             fieldset {
                 padding: 0;
-                border: none;
+                border: 0;
 
                 input, button {
                     width: 100%;

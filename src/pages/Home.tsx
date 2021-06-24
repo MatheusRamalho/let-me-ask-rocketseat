@@ -47,7 +47,7 @@ export function Home() {
 
             <AuthMain>
                 <div className="main__content">
-                    <img src={logoImg} alt="" />
+                    <img src={logoImg} alt="Letmeask" />
 
                     <Button className="button__sec" onClick={handleCreateRoom}>
                         <img src={googleIconImg} alt="" />

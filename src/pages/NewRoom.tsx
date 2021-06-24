@@ -63,7 +63,3 @@ export function NewRoom() {
         </AuthPage>
     )
 }
-
-function userAuth(): { user: any; } {
-    throw new Error('Function not implemented.');
-}

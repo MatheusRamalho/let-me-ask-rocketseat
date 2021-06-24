@@ -1,0 +1,95 @@
+#room__page {
+    header {
+        padding: 1.5rem;
+        border-bottom: 0.063rem solid var(--gray__light);
+
+        .content__ {
+            max-width: 70rem;
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >img {
+                max-height: 2.813rem;
+            }
+        }
+    }
+
+    main {
+        max-width: 50rem;
+        margin: 0 auto;
+
+        .room__title {
+            margin: 2rem 0 1.5rem;
+
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font-family: var(--font__poppins);
+                font-size: 1.5rem;
+                color: var(--black__light);
+            }
+
+            span {
+                margin-left: 1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 625rem;
+                background-color: var(--pink__light);
+
+                font-weight: 500;
+                font-size: 0.875rem;
+                color: var(--white__light);
+            }
+        }
+
+        form {
+            fieldset {
+                padding: 0;
+                border: 0;
+
+                textarea {
+                    resize: vertical;
+
+                    width: 100%;
+                    min-height: 8.125rem;
+                    padding: 1rem;
+                    border: 0.063rem solid var(--gray__light);
+                    border-radius: 0.5rem;
+                    background-color: var(--wite__dark);
+                    // box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.04);
+                }
+
+                .form__footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    margin-top: 1rem;
+
+                    span {
+                        font-size: 0.875rem;
+                        color: var(--gray__dark);
+
+                        button {
+                            cursor: pointer;
+
+                            border: 0;
+                            background-color: transparent;
+
+                            font-size: 0.875rem;
+                            color: var(--pink__light);
+
+                            &:hover {
+                                color: var(--pink__dark);
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

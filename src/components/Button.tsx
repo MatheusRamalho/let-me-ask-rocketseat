@@ -7,7 +7,7 @@ export const ButtonPri = styled.button`
     cursor: pointer;
 
     height: 3.125rem;
-    margin-top: 4rem;
+    padding: 0 1.2rem;
     border: none;
     border-radius: 0.5rem;
     background-color: var(--purple__light);
