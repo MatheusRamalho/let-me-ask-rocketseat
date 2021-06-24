@@ -69,7 +69,28 @@
 
                     margin-top: 1rem;
 
-                    span {
+                    .user__info {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        
+                        > img {
+                            width: 2rem;
+                            height: 2rem;
+                            border-radius: 50%;
+                            border: 0.125rem solid var(--pink__light);
+                        }
+
+                        span {
+                            margin-left: 0.7rem;
+
+                            font-weight: 500;
+                            font-size: 0.875rem;
+                            color: var(--black__light)
+                        }
+                    }
+
+                    > span {
                         font-size: 0.875rem;
                         color: var(--gray__dark);
 
