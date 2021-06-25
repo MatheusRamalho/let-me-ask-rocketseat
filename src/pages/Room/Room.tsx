@@ -50,10 +50,16 @@ export function Room() {
         setNewQuestion(''); // Limpar o campo.
     }
 
-    async function handleLikeQuestion(questionId: string) {
-        await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
-            authorId: user?.id,
-        });
+    async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
+        if (likeId) {
+            // remover like
+            await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).remove();
+
+        } else {
+            await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
+                authorId: user?.id,
+            });
+        }
     }
     
     return (
@@ -110,10 +116,10 @@ export function Room() {
                                 author={question.author}
                             >
                                 <button
-                                    className={`button__like ${question.hasLiked ? 'liked__' : ''}`}
+                                    className={`button__like ${question.likeId ? 'liked__' : ''}`}
                                     type="button"
                                     aria-label="Marcar como gostei"
-                                    onClick={ () => handleLikeQuestion(question.id) }
+                                    onClick={ () => handleLikeQuestion(question.id, question.likeId) }
                                 >
                                    { question.likeCount > 0 && <span> {question.likeCount} </span> }
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
