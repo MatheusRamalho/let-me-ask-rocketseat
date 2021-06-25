@@ -6,6 +6,7 @@ import { useAuth } from '../../hooks/useAuth';
 
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
+import { Question } from '../../components/Question';
 
 import './room.scss';
 import logoImg from '../../assets/images/logo.svg';
@@ -133,8 +134,20 @@ export function Room() {
                     </fieldset>
                 </form>
 
-                {JSON.stringify(questions)}
+                {/* Listando as questions */}
+                <div className="questions__list">
+                    {/* Todo map precisa ter um valor key */}
+                    {questions.map(question => {
+                        return (
+                            <Question
+                                key={question.id}
+                                content={question.content}
+                                author={question.author}
+                            />
+                        );
+                    })}
+                </div>
             </main>
         </div>
-    )
+    );
 }
