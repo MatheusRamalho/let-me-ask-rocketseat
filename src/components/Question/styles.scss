@@ -1,4 +1,3 @@
-
 .questions__ {
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -6,7 +5,7 @@
     background-color: var(--white__dark);
     box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
 
-    & + .questions__ {
+    &+.questions__ {
         margin-top: 0.5rem;
     }
 
@@ -25,8 +24,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            
-            > img {
+
+            >img {
                 width: 2rem;
                 height: 2rem;
                 border-radius: 50%;
@@ -40,6 +39,38 @@
                 color: var(--black__light)
             }
         }
-    }
 
+        button {
+            cursor: pointer;
+
+            border: 0;
+            background-color: transparent;
+            transition: filter 0.2s;
+
+            svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            &:hover {
+                filter: brightness(0.8);
+            }
+
+            &.button__like {
+                display: flex;
+                align-items: flex-end;
+                gap: 0.5rem;
+
+                color: var(--gray__medium);
+
+                &.liked__ {
+                    color: var(--purple__light);
+
+                    svg path {
+                        stroke: var(--purple__light);
+                    }
+                }
+            }
+        }
+    }
 }

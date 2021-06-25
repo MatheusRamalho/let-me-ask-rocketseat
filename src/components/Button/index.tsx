@@ -1,53 +1,33 @@
 // Tem todas as propriedades que um button html aceita.
 import { ButtonHTMLAttributes } from 'react';
-// import styled from 'styled-components';
-
 import './styles.scss';
 
-// export const ButtonPri = styled.button`
-//     cursor: pointer;
+// Utilizando o & no final e adicionando chaves
+// Indica que além de receber todas as propriedades padrão do html (ButtonHTMLAttributes<HTMLButtonElement>)
+// Vai receber mais algumas propriedades informadas.
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+    isOutlined?: boolean,
+    isDanger?: boolean,
+    isClear?: boolean,
+    isSecond?: boolean,
+};
 
-//     height: 3.125rem;
-//     padding: 0 1.2rem;
-//     border: none;
-//     border-radius: 0.5rem;
-//     background-color: var(--purple__light);
-//     transition: background-color .2s;
-
-//     font-weight: 500;
-//     color: var(--white__light);
-
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-
-//     img {
-//         margin-right: 0.5rem;
-//     }
-
-//     &:not(:disabled):hover {
-//         background-color: var(--purple__dark);
-//     }
-
-//     &:disabled {
-//         opacity: 0.6;
-//         cursor: not-allowed;   
-//     }
-
-//     &.button__sec {
-//         background-color: var(--pink__light);
-
-//         &:not(:disabled):hover {
-//             background-color: var(--pink__dark);
-//         }
-//     }
-// `;
-
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
-
-export function Button(props: ButtonProps) {
+export function Button({
+    isOutlined = false,
+    isDanger = false,
+    isClear = false,
+    isSecond = false,
+    ...props
+}: ButtonProps) {
     return (
-        <button {...props}></button>
-        // <ButtonPri {...props} />
+        <button
+            className={`button__ 
+                ${isOutlined ? 'outlined__' : ''}
+                ${isDanger ? 'danger__' : ''}
+                ${isClear ? 'clear__' : ''}
+                ${isSecond ? 'second__' : ''}
+            ` }
+            {...props}>
+        </button>
     );
 }

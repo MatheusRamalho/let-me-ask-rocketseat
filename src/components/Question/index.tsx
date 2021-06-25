@@ -1,3 +1,6 @@
+// ReactNode pode ser qualquer conteúdo JSX.
+// Usado muito para a propriedade children.
+import { ReactNode } from 'react';
 
 import './styles.scss';
 
@@ -7,11 +10,12 @@ type QuestionProps = {
         name: string;
         avatar: string;
     }
+    children?: ReactNode;
 }
 
 // Desestruturar o objeto da props
 export function Question({
-    content, author,
+    content, author, children
 }: QuestionProps) {
     return (
         <div className="questions__">
@@ -23,7 +27,7 @@ export function Question({
                     <span> {author.name}</span>
                 </div>
 
-                <div></div>
+                <div> {children} </div>
             </footer>
         </div>
     );

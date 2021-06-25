@@ -49,7 +49,10 @@ export function Home() {
                 <div className="main__content">
                     <img src={logoImg} alt="Letmeask" />
 
-                    <Button className="button__sec" onClick={handleCreateRoom}>
+                    <Button 
+                        isSecond
+                        onClick={handleCreateRoom}
+                    >
                         <img src={googleIconImg} alt="" />
                         Crie sua sala com o Google
                     </Button>
