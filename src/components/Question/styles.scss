@@ -1,12 +1,24 @@
 .questions__ {
     padding: 1.5rem;
     border-radius: 0.5rem;
-    // border: 0.063rem dashed var(--gray__light);
-    background-color: var(--white__dark);
+    background-color: var(--white__light);
     box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
-
+    
     &+.questions__ {
         margin-top: 0.5rem;
+    }
+
+    &.highlighted__ {
+        background-color: var(--white__dark);
+        border: 0.063rem solid var(--pink__light);
+
+        footer .user__info span {
+            color: var(--black__light);
+        }
+    }
+
+    &.answered__ {
+        background-color: var(--gray__light);
     }
 
     p {
@@ -36,10 +48,15 @@
                 margin-left: 0.7rem;
 
                 font-size: 0.875rem;
-                color: var(--black__light)
+                color: var(--gray__dark);
             }
         }
 
+        > div {
+            display: flex;
+            gap: 1rem;
+        }
+        
         button {
             cursor: pointer;
 

@@ -11,14 +11,24 @@ type QuestionProps = {
         avatar: string;
     }
     children?: ReactNode;
+    isAnswered?: boolean;
+    isHighlighted?: boolean;
 }
 
 // Desestruturar o objeto da props
 export function Question({
-    content, author, children
+    content,
+    author,
+    isAnswered = false,
+    isHighlighted = false,
+    children,
 }: QuestionProps) {
     return (
-        <div className="questions__">
+        <div className={`
+            questions__ 
+            ${isAnswered  ? 'answered__' : ''} 
+            ${isHighlighted && !isAnswered ? 'highlighted__' : ''} 
+        `}>
             <p> {content} </p>
 
             <footer>
